@@ -1,0 +1,17 @@
+# Archivos y carpetas temporales de NetBeans
+/nbproject/private/
+/build/
+/nb-configuration.xml
+
+# Carpetas de compilación de Maven
+/target/
+
+# Archivos compilados de Java
+*.class
+*.jar
+*.war
+
+# Archivos del sistema operativo y cachés
+.DS_Store
+Thumbs.db
+desktop.ini
