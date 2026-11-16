@@ -5,7 +5,7 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 public class Conexion {
     
-    String url="jdbc:mysql://localhost:3306/sistema_facturacion";
+    String url="jdbc:mysql://localhost:3306/sistemaReservasHotel";
     String user="root";
     String password="";
 
