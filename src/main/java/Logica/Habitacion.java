@@ -165,7 +165,7 @@ public class Habitacion {
          Conexion con = new Conexion();
          
          try {
-           String sql = "DELETE FROM Curso where id_habitacion=?";
+           String sql = "DELETE FROM Habitacion where id_habitacion=?";
            PreparedStatement pstmt = con.conectar().prepareStatement(sql); 
             pstmt.setInt(1, getId_habitacion());
             pstmt.executeUpdate();

@@ -160,10 +160,11 @@ public class Reserva {
            PreparedStatement pstmt = con.conectar().prepareStatement(sql);
            pstmt.setInt(1, getId_reserva()); 
            pstmt.setInt(2, getId_cliente());
-           pstmt.setInt(3, getPrecio_noche());
-           pstmt.setString(4, getEstadoHabitacion());
+           pstmt.setInt(3, getId_habitacion());
+           pstmt.setString(4, getFecha_entrada());
+           pstmt.setString(4, getFecha_salida());
            pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Habitacion actualizada con éxito");
+            JOptionPane.showMessageDialog(null, "Reserva actualizada con exito");
        } 
        catch (SQLException e) 
         {
@@ -177,9 +178,9 @@ public class Reserva {
          Conexion con = new Conexion();
          
          try {
-           String sql = "DELETE FROM Curso where id_habitacion=?";
+           String sql = "DELETE FROM Reserva where id_reserva=?";
            PreparedStatement pstmt = con.conectar().prepareStatement(sql); 
-            pstmt.setInt(1, getId_habitacion());
+            pstmt.setInt(1, getId_reserva());
             pstmt.executeUpdate();
        } 
        catch (SQLException e) 
