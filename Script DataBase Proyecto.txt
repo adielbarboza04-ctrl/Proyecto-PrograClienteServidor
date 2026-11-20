@@ -1,0 +1,31 @@
+Script DataBase Proyecto
+
+Create database sistemaReservasHotel;
+
+use sistemaReservasHotel;
+
+create table cliente ( 
+id_cliente int auto_increment primary key,
+    nombreCliente varchar(100) NOT NULL,
+    correoCliente varchar(100) NOT NULL,
+    telefonoCliente varchar(20) NOT NULL
+);
+
+create table habitacion (
+id_habitacion int auto_increment primary key,
+    tipoHabitacion varchar(50) NOT NULL,
+    precio_noche decimal(10, 2) NOT NULL,
+    estadoHabitacion varchar(20)
+);
+
+create table reserva (
+id_reserva int auto_increment primary key,
+    id_cliente int NOT NULL,
+    id_habitacion int NOT NULL,
+    fecha_entrada date NOT NULL,
+    fecha_salida date NOT NULL,
+    CONSTRAINT fk_reserva_cliente FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_reserva_habitacion FOREIGN KEY (id_habitacion) REFERENCES Habitacion(id_habitacion)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
